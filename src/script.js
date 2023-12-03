@@ -20,7 +20,7 @@ var drawLine = function (x1, y1, x2, y2) {
     ctx.moveTo(x1, y1);
     ctx.lineTo(x2, y2);
     ctx.strokeStyle = color;
-    ctx.lineWidth = size;
+    ctx.lineWidth = size * 2;
     ctx.stroke();
 };
 // our mouse down function
@@ -44,6 +44,9 @@ canvas.addEventListener("mousemove", function (e) {
         var y2 = e.offsetY;
         console.log(x2, y2);
         drawingCircle(x2, y2);
+        drawLine(x, y, x2, y2);
+        x = x2;
+        y = y2;
     }
 });
 drawingCircle(100, 200);
