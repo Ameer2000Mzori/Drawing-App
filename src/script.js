@@ -59,4 +59,23 @@ canvas.addEventListener("mousemove", function (e) {
 colorEl.addEventListener("change", function (e) {
     color = e.target.value;
 });
+// increase function
+increaseEl.addEventListener("click", function () {
+    size += 5;
+    if (size > 50) {
+        size = 50;
+    }
+    upDateSizeOnScreen();
+});
+decreaseEL.addEventListener("click", function () {
+    size -= 5;
+    if (size < 5) {
+        size = 5;
+    }
+    upDateSizeOnScreen();
+});
+// update size on screen
+var upDateSizeOnScreen = function () {
+    sizeEl.innerText = size;
+};
 // our eventlisnters

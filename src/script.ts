@@ -72,4 +72,31 @@ colorEl.addEventListener("change", (e) => {
   color = e.target.value;
 });
 
+// increase function
+increaseEl.addEventListener("click", () => {
+  size += 5;
+
+  if (size > 50) {
+    size = 50;
+  }
+
+  upDateSizeOnScreen();
+});
+
+decreaseEL.addEventListener("click", () => {
+  size -= 5;
+
+  if (size < 5) {
+    size = 5;
+  }
+
+  upDateSizeOnScreen();
+});
+
+// update size on screen
+
+const upDateSizeOnScreen = () => {
+  sizeEl.innerText = size;
+};
+
 // our eventlisnters
