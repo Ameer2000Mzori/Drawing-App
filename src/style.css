@@ -15,7 +15,7 @@ body {
   margin: 0;
 }
 
-canvas {
+#canvas {
   height: 800px;
   width: 800px;
   border: 2px solid steelblue;
@@ -46,3 +46,5 @@ canvas {
 .toolbox > *:last-child {
   margin-left: auto;
 }
+
+/*# sourceMappingURL=style.css.map */
