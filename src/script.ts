@@ -36,6 +36,13 @@ canvas.addEventListener("mousedown", (e) => {
 
 // here is our mouse up function
 
+canvas.addEventListener("mouseup", (e) => {
+  let isPressed = false;
+  x = undefined;
+  y = undefined;
+  console.log(isPressed, x, y);
+});
+
 drawingCircle(100, 200);
 
 // our eventlisnters
