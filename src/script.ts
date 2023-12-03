@@ -1,6 +1,12 @@
 // selecting our elements
 const canvas = document.getElementById("canvas") as any;
 const ctx = canvas.getContext("2d");
+const colorEl = document.getElementById("color") as any;
+const decreaseEL = document.getElementById("decrease") as any;
+const increaseEl = document.getElementById("increase") as any;
+const sizeEl = document.getElementById("size") as any;
+const clearEl = document.getElementById("clear") as any;
+
 // our global varibales
 
 let size = 5;
@@ -8,8 +14,11 @@ let color = "black";
 let x: any;
 let y: any;
 let isPressed: boolean;
+
 // our functions
-const drawingCircle = (x: any, y: any) => {
+
+// drawing circle function
+const drawingCircle = (x: any, y: any): void => {
   ctx.beginPath();
   ctx.arc(x, y, size, 0, Math.PI * 2, true);
   ctx.fillStyle = color;
@@ -18,7 +27,7 @@ const drawingCircle = (x: any, y: any) => {
 
 // draw line function
 
-const drawLine = (x1: any, y1: any, x2: any, y2: any) => {
+const drawLine = (x1: any, y1: any, x2: any, y2: any): void => {
   ctx.beginPath();
   ctx.moveTo(x1, y1);
   ctx.lineTo(x2, y2);

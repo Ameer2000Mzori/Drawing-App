@@ -1,6 +1,11 @@
 // selecting our elements
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
+var colorEl = document.getElementById("color");
+var decreaseEL = document.getElementById("decrease");
+var increaseEl = document.getElementById("increase");
+var sizeEl = document.getElementById("size");
+var clearEl = document.getElementById("clear");
 // our global varibales
 var size = 5;
 var color = "black";
@@ -8,6 +13,7 @@ var x;
 var y;
 var isPressed;
 // our functions
+// drawing circle function
 var drawingCircle = function (x, y) {
     ctx.beginPath();
     ctx.arc(x, y, size, 0, Math.PI * 2, true);
