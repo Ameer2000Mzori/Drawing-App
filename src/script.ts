@@ -67,6 +67,9 @@ canvas.addEventListener("mousemove", (e) => {
   }
 });
 
-drawingCircle(100, 200);
+// our color function
+colorEl.addEventListener("change", (e) => {
+  color = e.target.value;
+});
 
 // our eventlisnters
