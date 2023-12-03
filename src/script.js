@@ -6,6 +6,7 @@ var size = 5;
 var color = "black";
 var x;
 var y;
+var isPressed;
 // our functions
 var drawingCircle = function (x, y) {
     ctx.beginPath();
@@ -24,17 +25,26 @@ var drawLine = function (x1, y1, x2, y2) {
 };
 // our mouse down function
 canvas.addEventListener("mousedown", function (e) {
-    var isPressed = true;
+    isPressed = true;
     x = e.offsetX;
     y = e.offsetY;
     console.log(isPressed, x, y);
 });
-// here is our mouse up function
+// our mouse up function
 canvas.addEventListener("mouseup", function (e) {
-    var isPressed = false;
+    isPressed = false;
     x = undefined;
     y = undefined;
     console.log(isPressed, x, y);
+});
+// our mouse move function
+canvas.addEventListener("mousemove", function (e) {
+    if (isPressed) {
+        var x2 = e.offsetX;
+        var y2 = e.offsetY;
+        console.log(x2, y2);
+        drawingCircle(x2, y2);
+    }
 });
 drawingCircle(100, 200);
 // our eventlisnters

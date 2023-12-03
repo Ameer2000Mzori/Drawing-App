@@ -7,6 +7,7 @@ let size = 5;
 let color = "black";
 let x: any;
 let y: any;
+let isPressed: boolean;
 // our functions
 const drawingCircle = (x: any, y: any) => {
   ctx.beginPath();
@@ -28,19 +29,30 @@ const drawLine = (x1: any, y1: any, x2: any, y2: any) => {
 
 // our mouse down function
 canvas.addEventListener("mousedown", (e) => {
-  let isPressed = true;
+  isPressed = true;
   x = e.offsetX;
   y = e.offsetY;
   console.log(isPressed, x, y);
 });
 
-// here is our mouse up function
+// our mouse up function
 
 canvas.addEventListener("mouseup", (e) => {
-  let isPressed = false;
+  isPressed = false;
   x = undefined;
   y = undefined;
   console.log(isPressed, x, y);
+});
+
+// our mouse move function
+canvas.addEventListener("mousemove", (e) => {
+  if (isPressed) {
+    const x2 = e.offsetX;
+    const y2 = e.offsetY;
+    console.log(x2, y2);
+
+    drawingCircle(x2, y2);
+  }
 });
 
 drawingCircle(100, 200);
