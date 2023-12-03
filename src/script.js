@@ -22,5 +22,13 @@ var drawLine = function (x1, y1, x2, y2) {
     ctx.lineWidth = size;
     ctx.stroke();
 };
+// our mouse down function
+canvas.addEventListener("mousedown", function (e) {
+    var isPressed = true;
+    x = e.offsetX;
+    y = e.offsetY;
+    console.log(isPressed, x, y);
+});
+// here is our mouse up function
 drawingCircle(100, 200);
 // our eventlisnters

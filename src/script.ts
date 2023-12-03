@@ -26,6 +26,16 @@ const drawLine = (x1: any, y1: any, x2: any, y2: any) => {
   ctx.stroke();
 };
 
+// our mouse down function
+canvas.addEventListener("mousedown", (e) => {
+  let isPressed = true;
+  x = e.offsetX;
+  y = e.offsetY;
+  console.log(isPressed, x, y);
+});
+
+// here is our mouse up function
+
 drawingCircle(100, 200);
 
 // our eventlisnters
