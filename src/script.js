@@ -5,7 +5,7 @@ var colorEl = document.getElementById("color");
 var decreaseEL = document.getElementById("decrease");
 var increaseEl = document.getElementById("increase");
 var sizeEl = document.getElementById("size");
-var clearEl = document.getElementById("clear");
+var clearBtn = document.getElementById("clear-Btn");
 // our global varibales
 var size = 5;
 var color = "black";
@@ -67,6 +67,7 @@ increaseEl.addEventListener("click", function () {
     }
     upDateSizeOnScreen();
 });
+// decrease function
 decreaseEL.addEventListener("click", function () {
     size -= 5;
     if (size < 5) {
@@ -78,4 +79,8 @@ decreaseEL.addEventListener("click", function () {
 var upDateSizeOnScreen = function () {
     sizeEl.innerText = size;
 };
+clearBtn.addEventListener("click", function () {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+});
+//
 // our eventlisnters

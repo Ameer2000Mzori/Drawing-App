@@ -5,7 +5,7 @@ const colorEl = document.getElementById("color") as any;
 const decreaseEL = document.getElementById("decrease") as any;
 const increaseEl = document.getElementById("increase") as any;
 const sizeEl = document.getElementById("size") as any;
-const clearEl = document.getElementById("clear") as any;
+const clearBtn = document.getElementById("clear-Btn") as any;
 
 // our global varibales
 
@@ -83,6 +83,7 @@ increaseEl.addEventListener("click", () => {
   upDateSizeOnScreen();
 });
 
+// decrease function
 decreaseEL.addEventListener("click", () => {
   size -= 5;
 
@@ -94,9 +95,14 @@ decreaseEL.addEventListener("click", () => {
 });
 
 // update size on screen
-
 const upDateSizeOnScreen = () => {
   sizeEl.innerText = size;
 };
+
+clearBtn.addEventListener("click", () => {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+});
+
+//
 
 // our eventlisnters
